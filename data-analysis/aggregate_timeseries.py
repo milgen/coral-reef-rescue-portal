@@ -123,15 +123,15 @@ if __name__ == "__main__":
         ###########################
         ## provide parameter values:
 
-        root_dir = 'data/l2w'
-        # root_dir = '/data/results/batch_run'
+        #root_dir = 'data/l2w'
+        root_dir = '/data/results/batch_run'
 
         # all dates included
         date = ''
         algorithm = 'spm_nechad2016'
 
-        outputdir = '/home/angela/transfer/as/local'
-        # outputdir = '/home/eouser/transfer/as'
+        # outputdir = '/home/angela/transfer/as/local'
+        outputdir = '/home/eouser/transfer/as'
 
         kernel_size = 7
         number_of_clusters = 3
