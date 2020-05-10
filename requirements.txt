@@ -1,0 +1,15 @@
+numpy
+pandas
+sentinelsat
+rasterio
+folium
+geopandas
+descartes
+netCDF4
+Pillow
+scipy
+#urllib3
+geopandas
+scikit-learn
+jupyter
+ipykernel
