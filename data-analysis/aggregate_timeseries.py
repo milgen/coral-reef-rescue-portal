@@ -95,6 +95,9 @@ def aggregate(root_dir, date, algorithm, outputdir,
     prefix = "ts_"
     postfix = f"_{algorithm}"
 
+    ## save aggregated data
+    save_as_csv(data, outputdir, f"{prefix}aggregated_data{postfix}.csv")
+
     ## extract dataframe per group and save it as csv
     for cluster, cluster_indices in groups.items():
         cluster_values = values[:, cluster_indices[:, 0], cluster_indices[:, 1]]
@@ -103,9 +106,10 @@ def aggregate(root_dir, date, algorithm, outputdir,
         filename = f"{prefix}df_cluster_{cluster}{postfix}.csv"
         df.to_csv(os.path.join(outputdir, filename))
 
-    print(f"plotting and saving intermediate results to: {outputdir}")
+        ## save cluster indices
+        save_as_csv(cluster_indices, outputdir, f"{prefix}indices_cluster_{cluster}{postfix}.csv")
 
-    #don't need indices, use dataframe ! save_as_csv(indices, outputdir, 'thres_indices.csv')
+    print(f"plotting and saving intermediate results to: {outputdir}")
 
     filename = f"{prefix}time_averaged_maxima{postfix}.png"
     title = f"Areas with highest values for {algorithm} (time averaged)"
@@ -123,15 +127,15 @@ if __name__ == "__main__":
         ###########################
         ## provide parameter values:
 
-        #root_dir = 'data/l2w'
-        root_dir = '/data/results/batch_run'
+        root_dir = 'data/l2w'
+        #root_dir = '/data/results/batch_run'
 
         # all dates included
         date = ''
         algorithm = 'spm_nechad2016'
 
-        # outputdir = '/home/angela/transfer/as/local'
-        outputdir = '/home/eouser/transfer/as'
+        outputdir = '/home/angela/transfer/as/local'
+        #outputdir = '/home/eouser/transfer/as'
 
         kernel_size = 7
         number_of_clusters = 3

@@ -22,8 +22,7 @@ def get_product_paths(root_dir, date=''):
     """
     nc = glob.glob(f'{root_dir}/*{date}*/*L2W.nc')
     if len(nc) == 0:
-        print(f"no product found for date {date}")
-        return None
+        print(f"no product found for date: '{date}'")
     return nc
 
 
@@ -51,6 +50,10 @@ def aggregate_timeline(root_dir, date, algorithm, thres):
        dimensions are time frames * nlats * nlon
     """
     prod_paths = get_product_paths(root_dir, date)
+
+    assert (len(prod_paths) > 0), f"No processing results found at: '{root_dir}' " \
+                                  f"for {date or 'all dates'}. Stopping processing"
+
     value_array = []
     date_array = []
 
