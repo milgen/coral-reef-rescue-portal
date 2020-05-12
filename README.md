@@ -1,4 +1,4 @@
-#Coral Reef Rescue Portal
+# Coral Reef Rescue Portal
 
 This repository contains the prototype implementation of the Coral Reef Recsue Portal developed during 
 the eight weeks of
@@ -28,28 +28,26 @@ frequency of 1 image per 5 days. We selected images with less than 70% cloud cov
 and then stacked the images to derive the statistics, during the aggregation.
 
 
-# Installation and running the code
+## Installation and running the code
 
-## How-to run the demo
+### Run the demo
 You can find the instructions [here](demo/README.md).
-## Run the data analysis
+### Run the data analysis
 You can run scripts and notebooks locally, but the data is not part of the repository. 
-Details are described [here](data-analysis/README.md).
-
-TODO: Example data is provided here. 
+Details are described [here](data-analysis/README.md)
 
 
-## How-to run the data analysis code on the VM
-### Setup conda
+### Run the data analysis code on the VM
+#### Setup conda
 1. Source conda: `source /opt/conda/etc/profile.d/conda.sh`
 2. Activate coraladies environment: `conda activate coraladies`
 3. Optional: Install libraries with `pip install <missing-lib>`
 
-### Get or update the source code
- 1. Clone the repository: `git clone`
+#### Get or update the source code
+ 1. Clone the repository: `git clone https://github.com/Coraladies/coral-reef-rescue-portal.git`
  2. Get latest code from github:`git pull`
 
-### Run a Python Script
+#### Run a Python Script
 1. Goto source code: `cd ~/code/coral-reef-rescue-portal`
 3. Got to data-analysis: `cd data-analysis`
 4. Look at the example script `run_analyse_timeseries.py`
